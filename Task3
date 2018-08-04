@@ -1,0 +1,23 @@
+<html>
+<body>
+<form name="a" method="GET" action="<?=$_SERVER['PHP_SELF']?>">
+Enter your string:<input type="text" name="s">
+<input type="submit">
+</form>
+<?php
+$str = $_GET['s']; 
+echo $str;
+$arr = explode(' ',$str); //перевод элементов строки в массив
+$arr = array_count_values($arr); //подсчет кол-ва значений массива
+$x = max($arr); //нахождение максимального кол-ва одинаковых элементов
+if ($str == Null)
+{
+echo 'The string is empty'.'<br>';	
+}	
+else
+{
+echo '<br>'.'The answer: '.$x.'<br>';
+}
+?>
+</body>
+</html>
